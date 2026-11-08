@@ -42,7 +42,7 @@ export const MsgIcon = () => (
   <svg viewBox="0 0 24 24" {...stroke} aria-hidden><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5A8.4 8.4 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z" /></svg>
 );
 export const Caret = () => (
-  <svg className="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden><path d="M1 1.5l5 5 5-5" /></svg>
+  <svg className="caret" viewBox="0 0 12 8" fill="currentColor" aria-hidden><path d="M1 1h10L6 7z" /></svg>
 );
 export const CompassIcon = () => (<svg viewBox="0 0 24 24" {...stroke} aria-hidden><circle cx="12" cy="12" r="9" /><path d="M12 3v18M3 12h18" /></svg>);
 export const LineArtIcon = () => (<svg viewBox="0 0 24 24" {...stroke} aria-hidden><path d="M3 17c4-8 12-10 18-6" /><path d="M5 19c4-6 10-8 15-5" opacity=".5" /></svg>);

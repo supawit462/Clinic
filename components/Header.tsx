@@ -68,7 +68,6 @@ export default function Header() {
           </ul>
 
           <div className="nav-cta">
-            <Link className="btn btn-red" href="/contact#booking">จองคิว</Link>
             <button className="burger" aria-label="เปิดเมนู" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(!open)}>
               <span /><span /><span />
             </button>

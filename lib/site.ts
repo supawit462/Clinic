@@ -48,6 +48,8 @@ export const IMG = {
   banner: "/images/banner.jpg",
   master1: "/images/master-1.jpg",
   master2: "/images/master-2.jpg",
+  master1Cut: "/images/master-1-cut.png",
+  master2Cut: "/images/master-2-cut.png",
   hero: u("photo-1487412947147-5cebf100ffc2"),
   studio: u("photo-1560066984-138dadb4c035"),
   salon: u("photo-1522337360788-8b13dee7a37e"),

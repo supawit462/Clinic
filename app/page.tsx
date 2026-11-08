@@ -26,35 +26,46 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <svg className="swirl" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden>
-          <path d="M-50 620 C 300 380, 700 820, 1100 520 S 1500 260, 1560 320" stroke="#fff" strokeWidth="2" fill="none" opacity=".9" />
-          <path d="M-50 700 C 360 470, 760 900, 1160 600 S 1520 360, 1560 420" stroke="#e8cfca" strokeWidth="1.5" fill="none" />
-          <path d="M600 -40 C 820 160, 1120 120, 1500 260" stroke="#fff" strokeWidth="3" fill="none" opacity=".8" />
+        {/* soft silk curves, as in the Mi-A hero */}
+        <svg className="silk" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden>
+          <defs>
+            <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6" /></filter>
+            <linearGradient id="silkA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#fff" stopOpacity="0" />
+              <stop offset=".5" stopColor="#fff" stopOpacity=".95" />
+              <stop offset="1" stopColor="#fff" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#silkA)" filter="url(#soft)">
+            <ellipse cx="1180" cy="470" rx="520" ry="430" strokeWidth="26" opacity=".7" />
+            <ellipse cx="1150" cy="500" rx="640" ry="520" strokeWidth="14" opacity=".55" />
+            <ellipse cx="1220" cy="430" rx="420" ry="350" strokeWidth="8" opacity=".6" />
+            <path d="M-100 760 C 300 560, 620 900, 980 700 S 1500 420, 1700 520" strokeWidth="40" opacity=".55" />
+            <path d="M-100 160 C 260 40, 520 260, 820 120" strokeWidth="18" opacity=".45" />
+          </g>
+          <g fill="none" stroke="#fff" opacity=".7">
+            <ellipse cx="1180" cy="470" rx="560" ry="460" strokeWidth="1.5" />
+            <ellipse cx="1200" cy="450" rx="470" ry="390" strokeWidth="1" />
+            <path d="M-100 800 C 320 600, 640 940, 1000 740 S 1500 470, 1700 560" strokeWidth="1.5" />
+          </g>
         </svg>
-        <ZodiacWheel />
+
         <div className="wrap hero-grid">
-          <div className="reveal">
-            <span className="hero-kicker">Yoyo Makeover · สักคิ้ว{CONTACT.area}</span>
+          <div className="hero-copy reveal">
+            <span className="hero-kicker">Yoyo Makeover</span>
             <h1>ยืน 1 เรื่อง<br />คิ้วโหงวเฮ้ง</h1>
             <p className="lead">
-              ออกแบบคิ้วเฉพาะบุคคลจากโครงหน้า ปีนักษัตร และลักษณะดวงชะตา ให้คิ้วที่ทั้งสวยเป็นธรรมชาติและเป็นมงคล
-              เพราะทุกเคสดูแลโดย<b>อาจารย์ผู้เชี่ยวชาญ</b>
+              สวยอย่างมั่นใจ เสริมดวงอย่างถูกหลัก ออกแบบคิ้วเฉพาะบุคคลตามโครงหน้าและปีนักษัตร
+              เพราะทุกเคสดูแลโดย<b>{TEAM[0].name}</b>
             </p>
             <div className="hero-actions">
               <Link className="btn btn-red" href="/contact#booking">จองคิว</Link>
               <Link className="btn btn-ghost" href="/portfolio">ดูผลงาน</Link>
             </div>
-            <div className="hero-badges">
-              <div><b>12</b>คิ้วตามนักษัตร</div>
-              <div><b>1:1</b>ปรึกษาฟรีทุกเคส</div>
-            </div>
           </div>
-          <div className="hero-visual reveal">
-            <div className="arch-photo a1"><Image src={IMG.master1} alt={TEAM[0].name} fill priority sizes="(max-width: 960px) 50vw, 300px" /></div>
-            <div className="arch-photo a2"><Image src={IMG.master2} alt={TEAM[1].name} fill priority sizes="(max-width: 960px) 50vw, 300px" /></div>
-            <div className="ribbon-badge"><span><strong>No.1</strong>คิ้วโหงวเฮ้ง</span></div>
-            <div className="name-tag t1"><b>{TEAM[0].name}</b>ผู้เชี่ยวชาญคิ้วโหงวเฮ้ง</div>
-            <div className="name-tag t2"><b>{TEAM[1].name}</b>งานสักความงาม</div>
+          <div className="hero-visual">
+            <Image className="person p1" src={IMG.master1Cut} alt={TEAM[0].name} width={458} height={668} priority />
+            <Image className="person p2" src={IMG.master2Cut} alt={TEAM[1].name} width={453} height={658} priority />
           </div>
         </div>
       </section>
