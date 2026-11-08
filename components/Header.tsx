@@ -19,20 +19,11 @@ export default function Header() {
 
   return (
     <>
-      <div className="topbar">
-        <div className="wrap">
-          <div className="tb-left">ยืนหนึ่งเรื่องคิ้วโหงวเฮ้ง · ปรึกษาฟรีก่อนสักทุกเคส</div>
-          <div className="tb-right">
-            <a href={`tel:${CONTACT.tel}`}>โทร {CONTACT.phone}</a>
-            <a href={CONTACT.line} target="_blank" rel="noopener">LINE {CONTACT.lineId}</a>
-          </div>
-        </div>
-      </div>
       <header className={`site-header ${open ? "nav-open" : ""}`}>
         <div className="wrap nav">
           <Link href="/" className="logo" aria-label="Yoyo Makeover หน้าแรก">
             <span className="logo-mark"><LogoMark /></span>
-            <span className="logo-text"><strong>YOYO MAKEOVER</strong><span>สักคิ้วโหงวเฮ้ง เพชรเกษม 69</span></span>
+            <span className="logo-text"><strong>YOYO MAKEOVER</strong><span>ยืน 1 เรื่องคิ้วโหงวเฮ้ง</span></span>
           </Link>
 
           <ul className="menu" id="menu">
@@ -72,12 +63,12 @@ export default function Header() {
             )}
             <li className="mobile-cta">
               <a className="btn btn-line" href={CONTACT.line} target="_blank" rel="noopener"><LineIcon /> LINE</a>
-              <a className="btn btn-gold" href={`tel:${CONTACT.tel}`}><TelIcon /> โทรจองคิว</a>
+              <a className="btn btn-red" href={`tel:${CONTACT.tel}`}><TelIcon /> โทรจองคิว</a>
             </li>
           </ul>
 
           <div className="nav-cta">
-            <Link className="btn btn-gold" href="/contact#booking">จองคิว / ปรึกษาฟรี</Link>
+            <Link className="btn btn-red" href="/contact#booking">จองคิว</Link>
             <button className="burger" aria-label="เปิดเมนู" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(!open)}>
               <span /><span /><span />
             </button>

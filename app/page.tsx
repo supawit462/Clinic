@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
+import ZodiacWheel from "@/components/ZodiacWheel";
 import Photo from "@/components/Photo";
 import { CtaBand, SecHead, Stars } from "@/components/Blocks";
-import { CheckIcon, CompassIcon, LineArtIcon, LineIcon, MsgIcon, ShieldIcon } from "@/components/Icons";
-import { CONTACT, IMG, PORTFOLIO, REVIEWS, SERVICES } from "@/lib/site";
+import { CheckIcon, CompassIcon, LineArtIcon, ShieldIcon } from "@/components/Icons";
+import { CONTACT, IMG, PORTFOLIO, REVIEWS, SERVICES, TEAM } from "@/lib/site";
 
 const WHY = [
   { icon: <CompassIcon />, title: "ออกแบบตามโหงวเฮ้ง", text: "วิเคราะห์โครงหน้า ระยะคิ้ว-ตา และปีนักษัตร ก่อนวาดทรงทุกครั้ง" },
@@ -24,31 +26,46 @@ export default function Home() {
   return (
     <>
       <section className="hero">
+        <svg className="swirl" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden>
+          <path d="M-50 620 C 300 380, 700 820, 1100 520 S 1500 260, 1560 320" stroke="#fff" strokeWidth="2" fill="none" opacity=".9" />
+          <path d="M-50 700 C 360 470, 760 900, 1160 600 S 1520 360, 1560 420" stroke="#e8cfca" strokeWidth="1.5" fill="none" />
+          <path d="M600 -40 C 820 160, 1120 120, 1500 260" stroke="#fff" strokeWidth="3" fill="none" opacity=".8" />
+        </svg>
+        <ZodiacWheel />
         <div className="wrap hero-grid">
           <div className="reveal">
-            <span className="eyebrow">Yoyo Makeover · เพชรเกษม 69</span>
-            <h1>คิ้วสวยรับหน้า<br /><em>เสริมดวงตามโหงวเฮ้ง</em></h1>
+            <span className="hero-kicker">Yoyo Makeover · สักคิ้ว{CONTACT.area}</span>
+            <h1>ยืน 1 เรื่อง<br />คิ้วโหงวเฮ้ง</h1>
             <p className="lead">
-              ยืนหนึ่งเรื่องคิ้วโหงวเฮ้ง ออกแบบคิ้วเฉพาะบุคคลจากโครงหน้า ปีนักษัตร และลักษณะดวงชะตา
-              ให้คิ้วที่ทั้งสวยเป็นธรรมชาติและเป็นมงคล โดย Master Yo &amp; Master Lo
+              ออกแบบคิ้วเฉพาะบุคคลจากโครงหน้า ปีนักษัตร และลักษณะดวงชะตา ให้คิ้วที่ทั้งสวยเป็นธรรมชาติและเป็นมงคล
+              เพราะทุกเคสดูแลโดย<b>อาจารย์ผู้เชี่ยวชาญ</b>
             </p>
             <div className="hero-actions">
-              <Link className="btn btn-gold" href="/contact#booking">จองคิว / ปรึกษาฟรี</Link>
-              <a className="btn btn-line" href={CONTACT.line} target="_blank" rel="noopener"><LineIcon /> แอด LINE</a>
+              <Link className="btn btn-red" href="/contact#booking">จองคิว</Link>
               <Link className="btn btn-ghost" href="/portfolio">ดูผลงาน</Link>
             </div>
-            <div className="hero-stats">
-              <div><strong>12</strong><span>นักษัตร ออกแบบเฉพาะคุณ</span></div>
-              <div><strong>6</strong><span>บริการความงามถาวร</span></div>
-              <div><strong>1:1</strong><span>ปรึกษาก่อนสักทุกเคส</span></div>
+            <div className="hero-badges">
+              <div><b>12</b>คิ้วตามนักษัตร</div>
+              <div><b>1:1</b>ปรึกษาฟรีทุกเคส</div>
             </div>
           </div>
           <div className="hero-visual reveal">
-            <Photo src={IMG.hero} alt="คิ้วสวยรับหน้าแบบโหงวเฮ้ง" priority sizes="(max-width: 900px) 90vw, 520px" />
-            <div className="hero-badge">
-              <span className="dot"><MsgIcon /></span>
-              <p><strong>ปรึกษาฟรี</strong>ส่งรูปหน้าตรงทาง LINE ให้อาจารย์ช่วยดูทรงคิ้วที่เหมาะกับคุณ</p>
-            </div>
+            <div className="arch-photo a1"><Image src={IMG.master1} alt={TEAM[0].name} fill priority sizes="(max-width: 960px) 50vw, 300px" /></div>
+            <div className="arch-photo a2"><Image src={IMG.master2} alt={TEAM[1].name} fill priority sizes="(max-width: 960px) 50vw, 300px" /></div>
+            <div className="ribbon-badge"><span><strong>No.1</strong>คิ้วโหงวเฮ้ง</span></div>
+            <div className="name-tag t1"><b>{TEAM[0].name}</b>ผู้เชี่ยวชาญคิ้วโหงวเฮ้ง</div>
+            <div className="name-tag t2"><b>{TEAM[1].name}</b>งานสักความงาม</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="trust">
+        <div className="wrap">
+          <div className="trust-inner reveal">
+            <div className="big"><span className="gold-text">ยืน 1 เรื่องคิ้วโหงวเฮ้ง</span><small>สักคิ้ว{CONTACT.area} · โทร {CONTACT.phone}</small></div>
+            <div><strong className="gold-text">12</strong>นักษัตร ออกแบบเฉพาะคุณ</div>
+            <div><strong className="gold-text">6</strong>บริการความงามถาวร</div>
+            <div><strong className="gold-text">1:1</strong>ปรึกษาก่อนสักทุกเคส</div>
           </div>
         </div>
       </section>
@@ -87,7 +104,7 @@ export default function Home() {
 
       <section className="alt">
         <div className="wrap split">
-          <Photo className="reveal" src={IMG.studio} alt="บรรยากาศร้าน Yoyo Makeover" label="Master Yo & Master Lo" />
+          <div className="framed reveal"><Photo src={IMG.banner} alt="Yoyo Makeover ยืน 1 เรื่องคิ้วโหงวเฮ้ง" style={{ aspectRatio: "1/1" }} /></div>
           <div className="reveal">
             <span className="eyebrow">ศาสตร์แห่งคิ้ว</span>
             <h2>คิ้ว คือ “บ้านแห่งพี่น้องและมิตรสหาย” ในโหงวเฮ้ง</h2>
@@ -103,6 +120,7 @@ export default function Home() {
       </section>
 
       <section className="dark">
+        <ZodiacWheel className="wheel-steps" />
         <div className="wrap">
           <SecHead center eyebrow="ขั้นตอนการทำ" title="4 ขั้นตอนสู่คิ้วใหม่ที่ใช่" />
           <div className="grid g4 steps">

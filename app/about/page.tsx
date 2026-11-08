@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Photo from "@/components/Photo";
 import { CtaBand, PageHero, SecHead } from "@/components/Blocks";
 import { HeartIcon, ShieldIcon, UserIcon } from "@/components/Icons";
-import { IMG, ZODIAC } from "@/lib/site";
+import { IMG, TEAM, ZODIAC } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "เกี่ยวกับเรา",
-  description: "รู้จัก Yoyo Makeover และ Master Yo & Master Lo ผู้เชี่ยวชาญด้านการออกแบบคิ้วตามหลักโหงวเฮ้ง ย่านเพชรเกษม 69",
+  description: "รู้จัก Yoyo Makeover และทีมอาจารย์ ผู้เชี่ยวชาญด้านการออกแบบคิ้วตามหลักโหงวเฮ้ง ย่านเพชรเกษม 81",
 };
 
 const VALUES = [
@@ -19,17 +20,17 @@ const VALUES = [
 export default function About() {
   return (
     <>
-      <PageHero title="เกี่ยวกับเรา" crumb="เกี่ยวกับเรา" image={IMG.salon} />
+      <PageHero title="เกี่ยวกับเรา" crumb="เกี่ยวกับเรา" image={IMG.banner} />
 
       <section>
         <div className="wrap split">
-          <Photo className="reveal" src={IMG.salon} alt="หน้าร้าน Yoyo Makeover" label="Yoyo Makeover Studio" />
+          <div className="framed reveal"><Photo src={IMG.banner} alt="Yoyo Makeover ยืน 1 เรื่องคิ้วโหงวเฮ้ง" style={{ aspectRatio: "1/1" }} /></div>
           <div className="reveal">
             <span className="eyebrow">Our Story</span>
             <h2>Yoyo Makeover<br />ผู้เชี่ยวชาญด้านคิ้วโหงวเฮ้ง</h2>
             <p className="lead">เราเริ่มต้นจากความเชื่อว่า “คิ้ว” ไม่ใช่แค่ส่วนประกอบของความสวย แต่เป็นจุดสำคัญบนใบหน้าที่สะท้อนบุคลิก ความสัมพันธ์ และโอกาสในชีวิต</p>
             <p>Yoyo Makeover จึงนำศาสตร์โหงวเฮ้งและนรลักษณ์มาผสานกับเทคนิคการสักคิ้วสมัยใหม่ ออกแบบคิ้วให้แต่ละคนอย่างพิถีพิถัน ทั้งตามโครงหน้า ปีนักษัตร และสิ่งที่ลูกค้าอยากเสริมในชีวิต ไม่ว่าจะเป็นการงาน การเงิน หรือความรัก</p>
-            <p>ร้านตั้งอยู่ย่านเพชรเกษม 69 หนองแขม เปิดให้บริการแบบนัดหมาย เพื่อให้ทุกเคสได้รับเวลาและความใส่ใจอย่างเต็มที่</p>
+            <p>ร้านตั้งอยู่ย่านเพชรเกษม 81 หนองแขม เปิดให้บริการแบบนัดหมาย เพื่อให้ทุกเคสได้รับเวลาและความใส่ใจอย่างเต็มที่</p>
           </div>
         </div>
       </section>
@@ -37,15 +38,18 @@ export default function About() {
       <section className="alt">
         <div className="wrap">
           <SecHead center eyebrow="ทีมของเรา" title="ดูแลทุกเคสโดยอาจารย์ผู้เชี่ยวชาญ" />
-          <div className="grid g2">
-            <div className="card reveal">
-              <Photo src={IMG.brush} alt="Master Yo" label="Master Yo" style={{ aspectRatio: "4/3" }} />
-              <div className="card-body"><span className="tag">ผู้ก่อตั้ง</span><h3>Master Yo</h3><p>ผู้เชี่ยวชาญการออกแบบคิ้วตามหลักโหงวเฮ้งและคิ้ว 12 นักษัตร ดูแลการวิเคราะห์ใบหน้าและออกแบบทรงคิ้วเฉพาะบุคคล</p></div>
-            </div>
-            <div className="card reveal">
-              <Photo src={IMG.makeup} alt="Master Lo" label="Master Lo" style={{ aspectRatio: "4/3" }} />
-              <div className="card-body"><span className="tag">ผู้ก่อตั้ง</span><h3>Master Lo</h3><p>ช่างผู้ชำนาญการสักคิ้วเส้นต่อเส้น แก้คิ้ว สักตา และสักปาก ใส่ใจทุกรายละเอียดของเส้นและสี</p></div>
-            </div>
+          <div className="grid" style={{ gap: 28 }}>
+            {TEAM.map((m) => (
+              <div className="team-card reveal" key={m.name}>
+                <div className="photo"><Image src={m.photo} alt={m.name} fill sizes="(max-width: 760px) 100vw, 500px" /></div>
+                <div className="body">
+                  <span className="eyebrow">Master</span>
+                  <h3>{m.name}</h3>
+                  <p className="role">{m.role}</p>
+                  <p>{m.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -66,7 +70,7 @@ export default function About() {
           <div className="zodiac reveal">
             {ZODIAC.map(([c, n]) => <div key={n}><b>{c}</b>{n}</div>)}
           </div>
-          <p style={{ textAlign: "center", marginTop: 36 }}><Link className="btn btn-gold" href="/services#brow-zodiac">ดูบริการคิ้ว 12 นักษัตร</Link></p>
+          <p style={{ textAlign: "center", marginTop: 36 }}><Link className="btn btn-red" href="/services#brow-zodiac">ดูบริการคิ้ว 12 นักษัตร</Link></p>
         </div>
       </section>
 

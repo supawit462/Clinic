@@ -2,20 +2,42 @@
 
 export const CONTACT = {
   name: "Yoyo Makeover",
-  phone: "061-695-6916",
-  tel: "+66616956916",
+  // Main number from the Facebook cover; second number from the page listing
+  phone: "080-196-9655",
+  tel: "+66801969655",
+  phone2: "061-695-6916",
+  tel2: "+66616956916",
   facebook: "https://www.facebook.com/YoyoMakeBKK/",
+  facebookName: "สักคิ้วเพชรเกษม ยืน1 เรื่องคิ้วโหงวเฮ้ง",
   messenger: "https://m.me/YoyoMakeBKK",
   // TODO: replace with the studio's real LINE Official Account
   line: "https://line.me/R/ti/p/@yoyomake",
   lineId: "@yoyomake",
-  address: "ซอยเพชรเกษม 69 แขวงหนองแขม เขตหนองแขม กรุงเทพฯ",
+  address: "338/19 ถ.มาเจริญ หมู่บ้านเวิร์คเพลส เพชรเกษม 81 แขวงหนองค้างพลู เขตหนองแขม กรุงเทพฯ 10160",
+  area: "เพชรเกษม 81",
   hours: "ทุกวัน 10:00 – 19:00 น. (นัดหมายล่วงหน้า)",
   mapEmbed:
     "https://www.google.com/maps?q=" +
-    encodeURIComponent("เพชรเกษม 69 หนองแขม กรุงเทพ") +
+    encodeURIComponent("หมู่บ้านเวิร์คเพลส เพชรเกษม 81 หนองค้างพลู หนองแขม กรุงเทพ") +
     "&output=embed",
 };
+
+// The two masters, cropped from the Facebook cover photo (public/images)
+export const TEAM = [
+  {
+    name: "Master Thanawat",
+    role: "ผู้ก่อตั้ง · ผู้เชี่ยวชาญคิ้วโหงวเฮ้ง",
+    photo: "/images/master-1.jpg",
+    text: "ผู้เชี่ยวชาญการออกแบบคิ้วตามหลักโหงวเฮ้งและคิ้ว 12 นักษัตร วิเคราะห์โครงหน้าและดวงชะตาก่อนวาดทรงคิ้วเฉพาะบุคคล พร้อมเทคนิคเส้นต่อเส้นที่คมและเป็นธรรมชาติ",
+  },
+  {
+    // TODO: confirm this master's name with the studio
+    name: "Master Yo",
+    role: "ผู้ก่อตั้ง · ผู้เชี่ยวชาญงานสักความงาม",
+    photo: "/images/master-2.jpg",
+    text: "ชำนาญงานสักคิ้ว แก้คิ้ว สักตาหวาน และสักปากชมพู ใส่ใจทุกรายละเอียดของเส้นและสี เพื่อให้ผลงานสวยรับกับใบหน้าและบุคลิกของลูกค้า",
+  },
+];
 
 // Stock photos from Unsplash. Swap these for the studio's own photos
 // (put files in /public/images and use "/images/xxx.jpg").
@@ -23,6 +45,9 @@ const u = (id: string, w = 1200) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
 export const IMG = {
+  banner: "/images/banner.jpg",
+  master1: "/images/master-1.jpg",
+  master2: "/images/master-2.jpg",
   hero: u("photo-1487412947147-5cebf100ffc2"),
   studio: u("photo-1560066984-138dadb4c035"),
   salon: u("photo-1522337360788-8b13dee7a37e"),

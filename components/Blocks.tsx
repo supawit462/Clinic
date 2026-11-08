@@ -2,10 +2,12 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { CONTACT } from "@/lib/site";
 import { Brow, LineIcon, TelIcon } from "./Icons";
+import ZodiacWheel from "./ZodiacWheel";
 
 export function PageHero({ title, crumb, image, children }: { title: string; crumb: string; image?: string; children?: ReactNode }) {
   return (
     <section className="page-hero" style={image ? { ["--hero-img" as string]: `url(${image})` } : undefined}>
+      <ZodiacWheel />
       <div className="wrap">
         <span className="arch"><Brow /></span>
         <h1>{title}</h1>
@@ -31,6 +33,7 @@ export function CtaBand({ title, text, eyebrow }: { title: string; text: string;
     <section>
       <div className="wrap">
         <div className="cta-band reveal">
+          <ZodiacWheel />
           <div>
             {eyebrow && <span className="eyebrow">{eyebrow}</span>}
             <h2>{title}</h2>

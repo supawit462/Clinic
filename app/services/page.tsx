@@ -6,7 +6,7 @@ import { FAQ, IMG, SERVICES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "บริการของเรา",
-  description: "บริการสักคิ้วโหงวเฮ้ง คิ้ว 12 นักษัตร แก้คิ้ว สักตาหวาน สักปากชมพู และต่อขนตาเส้นต่อเส้น ที่ Yoyo Makeover เพชรเกษม 69",
+  description: "บริการสักคิ้วโหงวเฮ้ง คิ้ว 12 นักษัตร แก้คิ้ว สักตาหวาน สักปากชมพู และต่อขนตาเส้นต่อเส้น ที่ Yoyo Makeover เพชรเกษม 81",
 };
 
 export default function Services() {
@@ -33,7 +33,7 @@ export default function Services() {
                   <span>ระยะเวลา <b>{s.duration}</b></span>
                   <span>ราคา <b>{s.price}</b></span>
                 </div>
-                <Link className="btn btn-gold" href="/contact#booking">{s.cta}</Link>
+                <Link className="btn btn-red" href="/contact#booking">{s.cta}</Link>
               </div>
             </div>
           </article>
