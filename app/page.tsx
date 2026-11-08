@@ -25,7 +25,7 @@ export default function Home() {
   const featuredGroups = [PORTFOLIO[0], PORTFOLIO[1], PORTFOLIO[3]];
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-red">
         {/* soft silk curves, as in the Mi-A hero */}
         <svg className="silk" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden>
           <defs>
@@ -49,18 +49,19 @@ export default function Home() {
             <path d="M-100 800 C 320 600, 640 940, 1000 740 S 1500 470, 1700 560" strokeWidth="1.5" />
           </g>
         </svg>
+        <ZodiacWheel />
 
         <div className="wrap hero-grid">
           <div className="hero-copy reveal">
             <span className="hero-kicker">Yoyo Makeover</span>
-            <h1>ยืน 1 เรื่อง<br />คิ้วโหงวเฮ้ง</h1>
+            <h1>ยืน <span className="gold-text">1</span> เรื่อง<br />คิ้วโหงวเฮ้ง</h1>
             <p className="lead">
               สวยอย่างมั่นใจ เสริมดวงอย่างถูกหลัก ออกแบบคิ้วเฉพาะบุคคลตามโครงหน้าและปีนักษัตร
               เพราะทุกเคสดูแลโดย<b>{TEAM[0].name}</b>
             </p>
             <div className="hero-actions">
-              <Link className="btn btn-red" href="/contact#booking">จองคิว</Link>
-              <Link className="btn btn-ghost" href="/portfolio">ดูผลงาน</Link>
+              <Link className="btn btn-gold" href="/contact#booking">จองคิว</Link>
+              <Link className="btn btn-outline-light" href="/portfolio">ดูผลงาน</Link>
             </div>
           </div>
           <div className="hero-visual">

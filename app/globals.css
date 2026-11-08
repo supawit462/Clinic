@@ -462,3 +462,30 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--crimson); o
 .trust + section { padding-top: clamp(80px, 9vw, 110px); }
 @media (max-width: 620px) { .framed::before { inset: 12px 0 -12px 12px; } }
 html { overflow-x: clip; }
+
+/* ---------- Red hero (CI from the Facebook cover) ---------- */
+.hero.hero-red {
+  background:
+    radial-gradient(45% 60% at 74% 55%, rgba(214, 60, 78, .55) 0%, rgba(214, 60, 78, 0) 70%),
+    radial-gradient(80% 90% at 20% 30%, #a3172b 0%, rgba(163, 23, 43, 0) 70%),
+    linear-gradient(135deg, #7d0b1c 0%, #8f1123 40%, #5a0812 100%);
+  color: #f6dfd8;
+}
+.hero-red .hero-kicker { color: var(--gold-light); }
+.hero-red h1 { color: #fff; text-shadow: 0 6px 30px rgba(40, 0, 6, .35); }
+.hero-red h1 .gold-text { text-shadow: none; }
+.hero-red .lead { color: #f3d9d2; }
+.hero-red .lead b { color: var(--gold-light); }
+.hero-red .hero-actions .btn-gold { color: var(--wine-deep); }
+.hero-red .hero-actions .btn-outline-light { border: 1.5px solid rgba(255, 255, 255, .75); color: #fff; background: rgba(255, 255, 255, .06); }
+.hero-red .hero-actions .btn-outline-light:hover { background: #fff; color: var(--crimson); }
+.hero-red .silk { opacity: .35; }
+.hero-red .wheel { width: 760px; right: -60px; top: 50%; transform: translateY(-46%); color: var(--gold-light); opacity: .16; }
+.hero-red .hero-visual::before {
+  content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: 115%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 50% 60%, rgba(255, 226, 200, .38) 0%, rgba(255, 190, 170, .12) 40%, rgba(255, 190, 170, 0) 68%);
+}
+.hero-red .hero-visual .person { filter: drop-shadow(0 24px 34px rgba(30, 0, 5, .45)); }
+.hero-red + .trust { background: var(--cream); }
+@media (max-width: 960px) { .hero-red .wheel { width: 520px; right: -140px; top: auto; bottom: -60px; transform: none; } }
